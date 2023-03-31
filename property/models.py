@@ -64,6 +64,10 @@ class Claim(models.Model):
     flat = models.ForeignKey(Flat, verbose_name='Претензия по квартире:', related_name="claim_flat", on_delete=models.CASCADE)
     text = models.TextField('Текст претензии:')
 
+    def __str__(self):
+        return self.user
+
+
 
 class Owner(models.Model):
     name = models.CharField('ФИО владельца', max_length=200)
